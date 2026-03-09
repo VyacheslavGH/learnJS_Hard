@@ -3,7 +3,7 @@ let numToStr = String(num);
 
 // Первый вариант
 
-// let result = 0
+// let result = 0;
 
 // for (let i = 0; i < numToStr.length - 1; i++) {
 //     console.log(numToStr[i] * numToStr[i + 1]);
@@ -12,10 +12,10 @@ let numToStr = String(num);
 
 
 // Второй вариант
-let result = numToStr[0]
+let result = numToStr[0];
 
 for (let i = 1; i < numToStr.length; i++) {
-    result *= numToStr[i]
+    result *= numToStr[i];
 };
 
 console.log(`Результат умножения = ${result}`);
