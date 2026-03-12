@@ -1,26 +1,83 @@
-let num = 266219;
-let numToStr = String(num);
+"use script";
 
-// Первый вариант
+// let num = 266219;
+// let numToStr = String(num);
 
-// let result = 0;
+// // Первый вариант
 
-// for (let i = 0; i < numToStr.length - 1; i++) {
-//     console.log(numToStr[i] * numToStr[i + 1]);
-//     result += numToStr[i] * numToStr[i + 1];
+// // let result = 0;
+
+// // for (let i = 0; i < numToStr.length - 1; i++) {
+// //     console.log(numToStr[i] * numToStr[i + 1]);
+// //     result += numToStr[i] * numToStr[i + 1];
+// // };
+
+// // Второй вариант
+// let result = numToStr[0];
+
+// for (let i = 1; i < numToStr.length; i++) {
+//     result *= numToStr[i];
 // };
 
+// console.log(`Результат умножения = ${result}`);
 
-// Второй вариант
-let result = numToStr[0];
+// result **= 3;
+// console.log(`Результат возведенный в степень 3 = ${result}`);
 
-for (let i = 1; i < numToStr.length; i++) {
-    result *= numToStr[i];
-};
+// console.log(`Первые 2 цифры полученного числа = ${String(result)[0]}${String(result)[1]}`);
 
-console.log(`Результат умножения = ${result}`);
+let lang = "";
 
-result **= 3;
-console.log(`Результат возведенный в степень 3 = ${result}`);
+if (lang === "ru") {
+    console.log("Понедельник");
+    console.log("Вторник");
+    console.log("Среда");
+    console.log("Четверг");
+    console.log("Пятница");
+    console.log("Суббота");
+    console.log("Воскресенье");
+} else {
+    console.log("Monday");
+    console.log("Tuesday");
+    console.log("Wednesday");
+    console.log("Thursday");
+    console.log("Friday");
+    console.log("Saturday");
+    console.log("Sunday");
+}
 
-console.log(`Первые 2 цифры полученного числа = ${String(result)[0]}${String(result)[1]}`);
+switch (lang) {
+    case "ru":
+        console.log("Понедельник");
+        console.log("Вторник");
+        console.log("Среда");
+        console.log("Четверг");
+        console.log("Пятница");
+        console.log("Суббота");
+        console.log("Воскресенье");
+        break;
+
+    case "en":
+        console.log("Monday");
+        console.log("Tuesday");
+        console.log("Wednesday");
+        console.log("Thursday");
+        console.log("Friday");
+        console.log("Saturday");
+        console.log("Sunday");
+        break;
+
+    default:
+        console.log("Упс, что-то пошло не так :(");
+        break;
+}
+
+// Не забыть задачку с многомерным массивом
+
+let namePerson = "";
+
+namePerson === "Артем"
+    ? console.log("директор")
+    : namePerson === "Александр"
+      ? console.log("преподаватель")
+      : console.log("студент");
