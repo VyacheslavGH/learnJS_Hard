@@ -26,7 +26,7 @@
 
 // console.log(`Первые 2 цифры полученного числа = ${String(result)[0]}${String(result)[1]}`);
 
-let lang = "";
+let lang = "ru";
 
 if (lang === "ru") {
     console.log("Понедельник");
@@ -72,7 +72,28 @@ switch (lang) {
         break;
 }
 
-// Не забыть задачку с многомерным массивом
+let twoDimensionalArr = [
+    ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+];
+
+lang === "ru"
+    ? (console.log(twoDimensionalArr[0][0]),
+      console.log(twoDimensionalArr[0][1]),
+      console.log(twoDimensionalArr[0][2]),
+      console.log(twoDimensionalArr[0][3]),
+      console.log(twoDimensionalArr[0][4]),
+      console.log(twoDimensionalArr[0][5]),
+      console.log(twoDimensionalArr[0][6]))
+    : lang === "en"
+      ? (console.log(twoDimensionalArr[1][0]),
+        console.log(twoDimensionalArr[1][1]),
+        console.log(twoDimensionalArr[1][2]),
+        console.log(twoDimensionalArr[1][3]),
+        console.log(twoDimensionalArr[1][4]),
+        console.log(twoDimensionalArr[1][5]),
+        console.log(twoDimensionalArr[1][6]))
+      : console.log("Такой язык не поддерживается");
 
 let namePerson = "";
 
