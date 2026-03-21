@@ -18,24 +18,25 @@ const removeSpacesSetMaxLength = function (str) {
     // но если вынести его за while, цикл уходит в бесконечность
     // нужно подумать над решением
     const removeSpaces = function (strToClean) {
-        let firstChar = strToClean[0];
-        let lastChar = strToClean[strToClean.length - 1];
+        let strToArr = strToClean.split("");
+        console.log(strToArr);
 
-        if (firstChar !== " " && lastChar !== " ") {
+        if (strToArr[0] !== " " && strToArr[strToArr.length - 1] !== " ") {
             return strToClean;
         }
-        while (firstChar === " " || lastChar === " ") {
-            if (firstChar === " ") {
-                strWithoutSpaces = strToClean.slice(1);
-                strToClean = strWithoutSpaces;
-                console.log(`Внутри цикла: ${strWithoutSpaces}`);
-            } else if (lastChar === " ") {
-                strWithoutSpaces = strToClean.slice(0, -1);
-                strToClean = strWithoutSpaces;
-                console.log(`Внутри цикла: ${strWithoutSpaces}`);
+
+        while (strToArr[0] === " " || strToArr[strToArr.length - 1] === " ") {
+            if (strToArr[0] === " ") {
+                strToArr.splice(0, 1);
+                console.log(strToArr);
+            } else if (strToArr[strToArr.length - 1] === " ") {
+                strToArr.splice(-1, 1);
+                console.log(strToArr);
             }
-            return strWithoutSpaces;
         }
+
+        console.log(`Возврат из функции удаления пробелов = ${strToArr.join("")}`);
+        return strToArr.join("");
     };
 
     strWithoutSpaces = removeSpaces(str);
@@ -53,10 +54,3 @@ const removeSpacesSetMaxLength = function (str) {
 
     return result;
 };
-
-console.log(removeSpacesSetMaxLength("ff  "));
-// console.log(removeSpacesSetMaxLength(" hgj"));
-// console.log(removeSpacesSetMaxLength("фф"));
-// console.log(removeSpacesSetMaxLength("dfdgfgkjhldfjghldkfjgdgfgfgfgd").length);
-
-// РЕШИТЬ ПРОБЛЕМУ С ТЕМ, ЧТО ФУНКЦИЯ НЕ УБИРАЕТ ПРОБЕЛЫ ИЗ ПЕРЕДАВАЕМОЙ В НЕЕ СТРОКИ
