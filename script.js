@@ -15,11 +15,23 @@ getOnlyTwoAndFour(arr);
 
 // Второе задание
 const getPrimeNumber = function () {
-    for (let i = 2; i <= 100; i++) {
+    outer: for (let i = 2; i <= 100; i++) {
         if (i === 2 || i === 3) {
             console.log(`${i} - Делители этого числа 1 и ${i}`);
         }
 
-        
+        if (i % 2 === 0) {
+            continue;
+        }
+        inner: for (let j = i; j <= i / 2; j++) {
+            if (i % j === 0) {
+                break inner;
+            } else {
+                console.log(`${i} - Делители этого числа 1 и ${i}`);
+                break outer;
+            }
+        }
     }
 };
+
+getPrimeNumber();
