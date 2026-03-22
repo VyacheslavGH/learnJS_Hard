@@ -18,22 +18,17 @@ const getPrimeNumber = function () {
     outer: for (let i = 2; i <= 100; i++) {
         if (i === 2 || i === 3) {
             console.log(`${i} - Делители этого числа 1 и ${i}`);
+            continue;
         }
 
         if (i % 2 === 0) {
             continue;
         }
-        inner: for (let j = 3; j <= i; j++) {
+        inner: for (let j = 3; j < i; j++) {
             if (i % j === 0) {
                 continue outer;
-            } else if (i % j !== 0) {
-                console.log(`${i} - Делители этого числа 1 и ${i}`);
-                continue outer;
-            } else {
-                continue inner;
             }
         }
-
         console.log(`${i} - Делители этого числа 1 и ${i}`);
     }
 };
