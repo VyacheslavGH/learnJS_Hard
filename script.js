@@ -1,33 +1,25 @@
 "use script";
 
-let inputNum;
+// Певрое задание
+let arr = ["109537", "4546", "7645", "2870", "9898", "209780", "982"];
 
-// Проверяем, явлвяется ли переданное значение числом
-const isNumber = function (num) {
-    return !isNaN(parseFloat(num) && isFinite(num));
-};
-
-const getNumber = function () {
-    let arr = [];
-
-    while (!isNumber((inputNum = prompt("Введите любое число", 100)))) {
-        if (inputNum === null) {
-            return "Пользователь отменил ввод";
-        }
-
-        inputNum = prompt("Введите любое число", 100);
-    }
-
-    arr = inputNum.split("");
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === " ") {
-            arr.splice(i, 1);
-            i = i - 1;
+const getOnlyTwoAndFour = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        if (Number(array[i][0]) === 2 || Number(array[i][0]) === 4) {
+            console.log(array[i]);
         }
     }
-
-    return Number((inputNum = arr.join("")));
 };
 
-console.log(getNumber());
+getOnlyTwoAndFour(arr);
+
+// Второе задание
+const getPrimeNumber = function () {
+    for (let i = 2; i <= 100; i++) {
+        if (i === 2 || i === 3) {
+            console.log(`${i} - Делители этого числа 1 и ${i}`);
+        }
+
+        
+    }
+};
