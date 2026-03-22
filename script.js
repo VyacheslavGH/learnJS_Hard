@@ -23,14 +23,18 @@ const getPrimeNumber = function () {
         if (i % 2 === 0) {
             continue;
         }
-        inner: for (let j = i; j <= i / 2; j++) {
+        inner: for (let j = 3; j <= i; j++) {
             if (i % j === 0) {
-                break inner;
-            } else {
+                continue outer;
+            } else if (i % j !== 0) {
                 console.log(`${i} - Делители этого числа 1 и ${i}`);
-                break outer;
+                continue outer;
+            } else {
+                continue inner;
             }
         }
+
+        console.log(`${i} - Делители этого числа 1 и ${i}`);
     }
 };
 
