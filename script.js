@@ -1,23 +1,30 @@
 "use script";
 
 const week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+let textWrapper = document.querySelector(".wrapper");
 
 const logger = function (arr) {
     let date = new Date();
     let todayDay = date.getDay();
-    // console.log(todayDay);
+    let weekDay = "";
+
     for (day of arr) {
         if (day === "saturday" || day === "sunday") {
-            console.log("%c" + day, "font-style: italic;");
+            weekDay = document.createElement("p");
+            weekDay.textContent = day;
+            weekDay.classList.add("weekends");
+            textWrapper.append(weekDay);
         } else if (arr.indexOf(day) === todayDay - 1) {
-            console.log("%c" + day, "font-weight: bold;");
+            weekDay = document.createElement("p");
+            weekDay.textContent = day;
+            weekDay.classList.add("today");
+            textWrapper.append(weekDay);
         } else {
-            console.log(day);
+            weekDay = document.createElement("p");
+            weekDay.textContent = day;
+            textWrapper.append(weekDay);
         }
     }
 };
 
 logger(week);
-
-// выводить нужно на страницу html
-// реализовать
