@@ -60,6 +60,7 @@ const appData = {
         for (let i = 0; i < 2; i++) {
             let name = "";
             let sum = "";
+            let id = 0;
 
             while (!appData.isString(name)) {
                 name = prompt("Какой дополнительный тип услуги нужен?");
@@ -68,14 +69,13 @@ const appData = {
             while (!appData.isNumber(sum)) {
                 sum = prompt("Сколько это будет стоить?");
             }
-            appData.addOptions[name] = +sum;
+            appData.addOptions[name + " №" + [i]] = +sum;
             sum = "";
         }
     },
     addPrices: function () {
-        for (let screen of appData.screens) {
-            appData.screenPrice += +screen.price;
-        }
+        appData.screenPrice += appData.screens.reduce((sum, el) => sum + Number(el.price), 0);
+
         for (let key in appData.addOptions) {
             appData.allServicePrices += appData.addOptions[key];
         }
@@ -130,10 +130,12 @@ const appData = {
     },
     // Логи для отладки
     logger: function () {
+        console.log(`ScreenPrice = ${appData.screenPrice}`);
         console.log(appData.fullPrice);
         console.log(appData.servicePercentPrice);
         console.log(appData.title);
         console.log(appData.screens);
+        console.log(appData.addOptions);
     },
 };
 
