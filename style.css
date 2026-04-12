@@ -18,15 +18,3 @@ body {
 .wrapper p {
     padding: 10px 0;
 }
-
-.weekends {
-    font-style: italic;
-    color: rgb(255, 68, 68);
-
-}
-
-.today {
-    font-weight: 700;
-    font-size: 27px;
-    color: rgb(72, 167, 255);
-}
