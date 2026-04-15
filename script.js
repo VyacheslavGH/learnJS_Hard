@@ -64,19 +64,11 @@ const dateObj = {
     updateElement: function (elementToUpdate, value) {
         elementToUpdate.textContent = value;
     },
-    intervalUpdate: function (func, timeMs) {
-        setInterval(() => {
-            func;
-        }, timeMs);
-    },
 };
 
-// dateObj.addElement("p", dateObj.getFullDate());
-// dateObj.intervalUpdate(dateObj.updateElement(dateObj.actualDateList, dateObj.getShortDate()), 1000);
+dateObj.addElement("p", dateObj.getFullDate());
+dateObj.addElement("p", dateObj.getShortDate());
 
-// setInterval(() => {
-// dateObj.addElement("p", dateObj.getFullDate());
-//     dateObj.updateElement(dateObj.actualDateList, dateObj.getShortDate());
-// }, 1000);
-
-dateObj.intervalUpdate(dateObj.updateElement(dateObj.actualDateList, dateObj.getShortDate()), 1000);
+setInterval(() => {
+    dateObj.updateElement(dateObj.actualDateList.lastElementChild, dateObj.getShortDate());
+}, 1000);
